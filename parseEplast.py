@@ -109,7 +109,10 @@ for user_id in range(len(users_ids_list)):
         user_kvs_string += ', ' + kv.get_attribute('title')
     sheet.cell(row=user_id + 2, column=9).value = user_kvs_string
 
-    user_education = browser.find_element_by_xpath('/html/body/div/div[2]/div[1]/div[2]/div[4]/div[1]/div[5]/div[2]/div[10]/div[2]').text
+    try:
+        user_education = browser.find_element_by_xpath('/html/body/div/div[2]/div[1]/div[2]/div[4]/div[1]/div[5]/div[2]/div[10]/div[2]').text
+    except NoSuchElementException:
+        user_education = 'no user_education'
     sheet.cell(row=user_id + 2, column=12).value = user_education
 
     #membership
@@ -136,6 +139,27 @@ for user_id in range(len(users_ids_list)):
     except NoSuchElementException:
         stpl_stupin_date = 'no stpl_stupin_date'
     sheet.cell(row=user_id + 2, column=8).value = stpl_stupin_date
+
+    # profession
+    try:
+        profession = browser.find_element_by_xpath('/html/body/div/div[2]/div[1]/div[2]/div[4]/div[1]/div[5]/div[2]/div[13]/div[2]').text
+    except NoSuchElementException:
+        profession = 'no proffesion'
+    sheet.cell(row=user_id + 2, column=13).value = profession
+
+    # additional enterDate
+    try:
+        enterDate = browser.find_element_by_xpath('/html/body/div/div[2]/div/div[2]/div[4]/div/div[5]/div[2]').text
+    except NoSuchElementException:
+        enterDate = 'no additional enterDate'
+    sheet.cell(row=user_id + 2, column=13).value = enterDate
+
+    # end of aprobation period
+    try:
+        end_of_oprobation = browser.find_element_by_xpath('/html/body/div/div[2]/div/div[2]/div[4]/div/div[5]/div[3]').text
+    except NoSuchElementException:
+        end_of_oprobation = 'no end_of_oprobation'
+    sheet.cell(row=user_id + 2, column=13).value = end_of_oprobation
 
     wb.save('епласт Львів хлопці.xlsx')
 

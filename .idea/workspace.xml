@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ff37d12-59a3-4a88-847d-b8255d6608d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/parse3proba.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3 проба.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/3 проба.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse3proba.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse3proba.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parseEplast.py" beforeDir="false" afterPath="$PROJECT_DIR$/parseEplast.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/епласт Львів хлопці.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/епласт Львів хлопці.xlsx" afterDir="false" />
     </list>
