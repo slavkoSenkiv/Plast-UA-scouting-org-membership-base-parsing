@@ -8,8 +8,8 @@ sheet = wb.active
 url = 'http://3proba.sitegist.net/uk/profile/?userid='
 
 user_id = 7430
-while user_id < 7440:
-    for x in range(2, sheet.max_row):
+while user_id <= 7440:
+    for x in range(1, 7440):
 
         page = requests.get(url + str(user_id))
         page.raise_for_status()
@@ -21,14 +21,14 @@ while user_id < 7440:
             print('cant find name')
             sheet.cell(row=x, column=1).value = str(user_id)
             sheet.cell(row=x, column=2).value = name_text
-            user_id += 1
+
         else:
             name_text = name[0].getText()
             print(name_text)
             sheet.cell(row=x, column=1).value = str(user_id)
             sheet.cell(row=x, column=2).value = name_text
-            user_id += 1
 
-wb.save('3 проба.xlsx')
+        user_id += 1
+        wb.save('3 проба.xlsx')
 
 
