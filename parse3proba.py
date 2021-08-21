@@ -29,6 +29,9 @@ def get_check_write(row, column, selector):
                 value = value.replace('Дата Іменування розвідувачкою', '')
             if value.startswith('Дата початку - '):
                 value = value.replace('Дата початку - ', '')
+            if value.startswith('\n'):
+                value = value.replace('\n', ' ')
+
             sheet.cell(row=row, column=column).value = value
 
     except IndexError:
@@ -41,7 +44,7 @@ print('opening sheet')
 url = 'http://3proba.sitegist.net/uk/profile/?userid='
 # user_id_list = [2000, 7500, 1000, 7304, 7416]
 first_id = 365
-last_id = 371  # 7824
+last_id = 7824 # 371
 cycle_start_time = time.time()
 
 # </editor-fold>
@@ -69,8 +72,8 @@ for user_id in range(first_id, last_id + 1):
         get_check_write(row, 11, 'div.well > div > div.num')  # номерПроби
         get_check_write(row, 12, 'div.well > div > div.date')  # датаПроби
         get_check_write(row, 13, 'div.descriptionCol > h4')  # курінь
-        get_check_write(row, 14, '___')  # станиця
-        get_check_write(row, 15, '___')  # округа
+        # get_check_write(row, 14, 'div.panel-body > b')  # станиця
+        # get_check_write(row, 15, '___')  # округа
 
         vmilosti_string = ''  # вмілості
         vmilosti_element = soup.select('div.uservmilist > div')
