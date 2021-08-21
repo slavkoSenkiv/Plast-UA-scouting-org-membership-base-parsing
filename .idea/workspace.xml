@@ -5,9 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3 проба.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/3 проба.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse3proba.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse3proba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parseEplastOptimised.py" beforeDir="false" afterPath="$PROJECT_DIR$/parseEplastOptimised.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/епласт Львів хлопці oптимізовано.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/епласт Львів хлопці oптимізовано.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/епласт Львів хлопці.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.parseEplastOptimised">
+  <component name="RunManager" selected="Python.parse3proba">
     <configuration name="parse3proba" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="parse-Eplast" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,9 +146,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.parseEplastOptimised" />
-        <item itemvalue="Python.scratch_7" />
         <item itemvalue="Python.parse3proba" />
+        <item itemvalue="Python.scratch_7" />
+        <item itemvalue="Python.parseEplastOptimised" />
         <item itemvalue="Python.scratch_6" />
         <item itemvalue="Python.parseEplast" />
       </list>
