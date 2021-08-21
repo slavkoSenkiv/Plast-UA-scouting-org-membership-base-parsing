@@ -25,6 +25,10 @@ def get_check_write(row, column, selector):
                 value = value.replace('Дата Іменування розвідувачем', '')
             if value.startswith('Дата Іменування розвідувачем'):
                 value = value.replace('Дата Іменування розвідувачем', '')
+            if value.startswith('Дата Іменування розвідувачкою'):
+                value = value.replace('Дата Іменування розвідувачкою', '')
+            if value.startswith('Дата початку - '):
+                value = value.replace('Дата початку - ', '')
             sheet.cell(row=row, column=column).value = value
 
     except IndexError:
@@ -37,14 +41,14 @@ print('opening sheet')
 url = 'http://3proba.sitegist.net/uk/profile/?userid='
 # user_id_list = [2000, 7500, 1000, 7304, 7416]
 first_id = 365
-last_id = 400  # 7824
+last_id = 371  # 7824
 cycle_start_time = time.time()
 
 # </editor-fold>
 
 
 for user_id in range(first_id, last_id + 1):
-    print(f'{user_id - (first_id - 1)} / {last_id - first_id}')
+    print(f'{user_id - (first_id - 1)} / {last_id - first_id}, id = {user_id} ')
     row = user_id - 363
     page = requests.get(url + str(user_id))
     page.raise_for_status()
@@ -54,21 +58,21 @@ for user_id in range(first_id, last_id + 1):
     try:  # if there is no name = empty page
         name = soup.select('div.profileBox > h3')[0].getText()
 
-        get_check_write(row, 3, 'div.panel-body > p:nth-child(1)') # датаВступу
-        get_check_write(row, 4, 'div.panel-body > p:nth-child(2)') # датаПрисяги
-        get_check_write(row, 5, 'div.panel-body > p:nth-child(3)') # часНаПробу
-        get_check_write(row, 6, 'div.alert.alert-success') # датаІменуванняРозвідувачем
-        get_check_write(row, 7, 'div:nth-child(3) > div.panel-body') # діловедення
-        get_check_write(row, 8, 'div:nth-child(4) > div.panel-body') # табори
-        get_check_write(row, 9, 'div:nth-child(5) > div.panel-body') # пересторогиТаВідзначення
+        get_check_write(row, 3, 'div.panel-body > p:nth-child(1)')  # датаВступу
+        get_check_write(row, 4, 'div.panel-body > p:nth-child(2)')  # датаПрисяги
+        get_check_write(row, 5, 'div.panel-body > p:nth-child(3)')  # датаІменуванняРозвідувачем
+        get_check_write(row, 6, 'div.alert.alert-success')  # часНаПробу
+        get_check_write(row, 7, 'div:nth-child(3) > div.panel-body')  # діловедення
+        get_check_write(row, 8, 'div:nth-child(4) > div.panel-body')  # табори
+        get_check_write(row, 9, 'div:nth-child(5) > div.panel-body')  # пересторогиТаВідзначення
         get_check_write(row, 10, 'div.well > b') # неТретьопробник
-        get_check_write(row, 11, 'div.well > div > div.num') # номерПроби
-        get_check_write(row, 12, 'div.well > div > div.date') # датаПроби
-        get_check_write(row, 13, 'div.descriptionCol > h4') # курінь
-        get_check_write(row, 14, '___') # станиця
-        get_check_write(row, 15, '___') # округа
+        get_check_write(row, 11, 'div.well > div > div.num')  # номерПроби
+        get_check_write(row, 12, 'div.well > div > div.date')  # датаПроби
+        get_check_write(row, 13, 'div.descriptionCol > h4')  # курінь
+        get_check_write(row, 14, '___')  # станиця
+        get_check_write(row, 15, '___')  # округа
 
-        vmilosti_string = '' # вмілості
+        vmilosti_string = ''  # вмілості
         vmilosti_element = soup.select('div.uservmilist > div')
         for x in vmilosti_element:
             vmilosti_string += x.getText() + ', '
