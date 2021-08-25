@@ -64,12 +64,13 @@ id_file.close()
 print(id_list)"""
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-browser = webdriver.Chrome(executable_path='/Users/ysenkiv/Code/chromedriver')
-actions = ActionChains(browser)
-browser.maximize_window()
-browser.get('https://xkcd.com/')
-actions.send_keys(Keys.COMMAND + 't')
-actions.perform()
-browser.get('https://ua.sinoptik.ua/')
+browser1 = webdriver.Chrome(executable_path='/Users/ysenkiv/Code/chromedriver')
+browser1.maximize_window()
+browser1.get('https://xkcd.com/')
+browser2 = webdriver.Chrome(executable_path='/Users/ysenkiv/Code/chromedriver')
+browser2.maximize_window()
+browser2.get('https://ua.sinoptik.ua/')
+
+
+
 
