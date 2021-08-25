@@ -50,11 +50,10 @@ try:
 except IndexError:
     print(user_id)
     print('пуста сторінка')"""
-from pathlib import Path
 """
 for x in range(5, 10):
     print(x)"""
-id_list = []
+"""id_list = []
 id_file = open('id boys.txt', 'r')
 for user_id in id_file:
     user_id = user_id.replace('\n', '')
@@ -62,5 +61,15 @@ for user_id in id_file:
 
 id_file.close()
 
-print(id_list)
+print(id_list)"""
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+browser = webdriver.Chrome(executable_path='/Users/ysenkiv/Code/chromedriver')
+actions = ActionChains(browser)
+browser.maximize_window()
+browser.get('https://xkcd.com/')
+actions.send_keys(Keys.COMMAND + 't')
+actions.perform()
+browser.get('https://ua.sinoptik.ua/')
 
